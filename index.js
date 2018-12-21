@@ -8,5 +8,5 @@ export default {
     decryptAES: (cipher, key, iv) => RNCryptography.decryptAES(cipher, key, iv),
     // Hash
     md5: value => RNCryptography.md5(value),
-    md5: value => RNCryptography.sha256(value),
+    sha256: value => RNCryptography.sha256(value),
 }
