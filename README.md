@@ -7,6 +7,17 @@ Important notes: On iOS, this is not a library project - see installation instru
 
 - Android: It uses `BouncyCastle`
 
+## Cryptographic functions
+
+### Symetric ciphering
+
+- AES (128, 192, 256)
+
+### Hashing
+
+- MD5
+- SHA256
+
 ## Getting started
 
 `$ npm install react-native-cryptography --save`
