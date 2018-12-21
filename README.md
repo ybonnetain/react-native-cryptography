@@ -58,7 +58,7 @@ iOS: See manual installation section
   	```
 
 ## Usage
-```jsx
+```javascript
 import RNCryptography from 'react-native-cryptography';
 
 // Advanced Encryption Standard
@@ -68,41 +68,34 @@ import RNCryptography from 'react-native-cryptography';
 // For AES 256 -> 32 bytes key and iv
 
 // AES: encrypt
-_encryptAES = () => {
-  RNCryptography.encryptAES(
-    'Hello, I am a message that needs to be encrypted. bye',
-    'keykeykeykeykeyk', // key
-    'drowssapdrowssap' // iv
-  )
-  .then(value => console.log(value))
-  .catch(err => console.error(err));
-}
+RNCryptography.encryptAES(
+  'Hello, I am a message that needs to be encrypted. bye',
+  'keykeykeykeykeyk', // key
+  'drowssapdrowssap' // iv
+)
+.then(value => console.log(value))
+.catch(err => console.error(err));
 
 // AES: decrypt
-_decryptAES = () => {
-  RNCryptography.decryptAES(
-    'YAxm2nQCUwFCc3gK7zDTcRmK8uq3NfLZi2qT7hnl0l369XjDNxsO+qAQe8t3B4lxewCb5X6GNPvfrd2vlf689w==',
-    'keykeykeykeykeyk', // key
-    'drowssapdrowssap' // iv
-  )
-  .then(value => console.log(value))
-  .catch(err => console.error(err));
-}
+RNCryptography.decryptAES(
+  'YAxm2nQCUwFCc3gK7zDTcRmK8uq3NfLZi2qT7hnl0l369XjDNxsO+qAQe8t3B4lxewCb5X6GNPvfrd2vlf689w==',
+  'keykeykeykeykeyk', // key
+  'drowssapdrowssap' // iv
+)
+.then(value => console.log(value))
+.catch(err => console.error(err));
 
 
 // Hash
 
 // MD5
 
-_md5 = () => {
-  RNCryptography.md5('string needing hash').then(digest => console.log(digest));
-}
+RNCryptography.md5('string needing hash').then(digest => console.log(digest));
 
 // SHA256
 
-_sha256 = () => {
-  RNCryptography.sha256('string needing hash').then(digest => console.log(digest));
-}
+RNCryptography.sha256('string needing hash').then(digest => console.log(digest));
+
 
 
 ```
