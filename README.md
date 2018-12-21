@@ -59,11 +59,12 @@ import RNCryptography from 'react-native-cryptography';
 // AES: encrypt
 _encryptAES = () => {
   RNCryptography.encryptAES(
-    'Hello, I am a message that needs to be encrypted. bye',      'keykeykeykeykeyk', // key
+    'Hello, I am a message that needs to be encrypted. bye',
+    'keykeykeykeykeyk', // key
     'drowssapdrowssap' // iv
-  ).then(value => {
-    console.log(value);
-  }).catch(err => console.error(err));
+  )
+  .then(value => console.log(value))
+  .catch(err => console.error(err));
 }
 
 // AES: decrypt
@@ -72,9 +73,9 @@ _decryptAES = () => {
     'YAxm2nQCUwFCc3gK7zDTcRmK8uq3NfLZi2qT7hnl0l369XjDNxsO+qAQe8t3B4lxewCb5X6GNPvfrd2vlf689w==',
     'keykeykeykeykeyk', // key
     'drowssapdrowssap' // iv
-  ).then(value => {
-    console.log(value);
-  }).catch(err => console.error(err));
+  )
+  .then(value => console.log(value))
+  .catch(err => console.error(err));
 }
 
 
