@@ -1,7 +1,7 @@
 
 {
   "name": "react-native-cryptography",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Description RN lib of standard cryptographic functions",
   "repository": {
     "type": "git",
