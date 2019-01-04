@@ -41,8 +41,8 @@ iOS: See manual installation section
 #### iOS
 
 1. In XCode, in the project navigator, right click `<Your Target>` ➜ `Add Files to [your project's name]`
-2. Go to `node_modules` ➜ `react-native-cryptography` and add `RNCryptography.m + RNCryptography.swift + RNCryptography-Bridging-Header.h`
-3. Modify `RNCryptography-Bridging-Header.h` name to `<Your Target>-Bridging-Header.h`
+2. Go to `node_modules` ➜ `react-native-cryptography` and add `RNCryptography.m + RNCryptography.swift`
+3. Accept the bridging header creation and add `#import <React/RCTBridge.h>`
 4. Add a `Podfile` in the sources root dir and add `pod 'CryptoSwift'` to it.
 5. `cd ios/ && pod install`
 6. Reopen xcode using your app workspace
