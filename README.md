@@ -3,9 +3,9 @@
 
 Important notes: On iOS, this is not a library project - see installation instructions
 
-- iOS: It uses `CryptoSwift`
+- iOS `CryptoSwift`
 
-- Android: !TODO! It uses `BouncyCastle` !TODO!
+- Android `BouncyCastle` !TODO finish md5 and sha256!
 
 ## Cryptographic functions
 
