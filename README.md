@@ -64,44 +64,53 @@ iOS: See manual installation section
 
 ## Usage
 ```javascript
+import React, { Component } from 'react';
+import { Button, StyleSheet, Text, TextInput, View } from 'react-native';
 import RNCryptography from 'react-native-cryptography';
 
-// Advanced Encryption Standard
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    marginTop: 50,
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+  },
+});
 
-// For AES 128 -> 16 bytes key and iv
-// For AES 192 -> 24 bytes key and iv
-// For AES 256 -> 32 bytes key and iv
+export default class App extends Component {
+  static AES_KEY_128 = 'keykeykeykeykeyk';
+  static AES_IV_128 = 'drowssapdrowssap';
 
-// AES: encrypt
-RNCryptography.encryptAES(
-  'Hello, I am a message that needs to be encrypted. bye',
-  'keykeykeykeykeyk', // key
-  'drowssapdrowssap' // iv
-)
-.then(value => console.log(value))
-.catch(err => console.error(err));
+  encryptAES() {
+    RNCryptography.encryptAES('Hello, I am the message to cipher', App.AES_KEY_128, App.AES_IV_128) 
+      .then(value => console.log(value))
+      .catch(err => console.error(err));
+  }
 
-// AES: decrypt
-RNCryptography.decryptAES(
-  'YAxm2nQCUwFCc3gK7zDTcRmK8uq3NfLZi2qT7hnl0l369XjDNxsO+qAQe8t3B4lxewCb5X6GNPvfrd2vlf689w==',
-  'keykeykeykeykeyk', // key
-  'drowssapdrowssap' // iv
-)
-.then(value => console.log(value))
-.catch(err => console.error(err));
+  decryptAES() {
+    RNCryptography.decryptAES('FNblGLlDskkoe1vLbwtTJ8xeIXmQp3udaFL8KI91hfGhYFyqA0eLcfoy3iFFw2af', App.AES_KEY_128, App.AES_IV_128) 
+      .then(value => console.log(value))
+      .catch(err => console.error(err));
+  }
 
+  md5() {
+    RNCryptography.md5('string to digest').then(digest => console.log(digest));
+  }
 
-// Hash
+  sha256() {
+    RNCryptography.sha256('string to digest').then(digest => console.log(digest));
+  }
 
-// MD5
-
-RNCryptography.md5('string needing hash').then(digest => console.log(digest));
-
-// SHA256
-
-RNCryptography.sha256('string needing hash').then(digest => console.log(digest));
-
-
-
+  render() {
+    return (
+      <View style={styles.container}>
+        <Button onPress={this.encryptAES} title={'encrypt with AES'} />
+        <Button onPress={this.decryptAES} title={'decrypt AES'} />
+        <Button onPress={this.md5} title={'MD5'} />
+        <Button onPress={this.sha256} title={'SHA256'} />
+      </View>
+    );
+  }
+}
 ```
   
