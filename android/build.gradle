@@ -40,6 +40,7 @@ repositories {
 
 dependencies {
     compile 'com.facebook.react:react-native:+'
+    compile 'commons-codec:commons-codec:1.11'
     compile 'org.bouncycastle:bcprov-jdk15on:1.58'
 }
   
