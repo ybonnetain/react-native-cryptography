@@ -11,7 +11,12 @@ Important notes: On iOS, this is not a library project - see installation instru
 
 ### Symetric ciphering
 
-- AES (128, 192, 256)
+- AES 128 -> 16 bytes key and iv
+
+- AES 192 -> 24 bytes key and iv
+
+- AES 256 -> 32 bytes key and iv
+
 
 ### Hashing
 
