@@ -11,17 +11,27 @@ Important notes: On iOS, this is not a library project - see installation instru
 
 ### Symetric ciphering
 
+func      | ios                  | android
+----------|----------------------|--------------
+`AES 128` | ✓                    | ✓
+----------|----------------------|--------------
+`AES 192` | ✓                    | ✓
+----------|----------------------|--------------
+`AES 256` | ✓                    | ✓
+
 - AES 128 (pass 16 bytes key and iv)
 
 - AES 192 (pass 24 bytes key and iv)
 
 - AES 256 (pass 32 bytes key and iv)
 
-
 ### Hashing
 
-- MD5
-- SHA256
+func      | ios                  | android
+----------|----------------------|--------------
+`MD5`     | ✓                    | TODO
+----------|----------------------|--------------
+`SHA256`  | ✓                    | TODO
 
 ## Getting started
 
@@ -113,4 +123,3 @@ export default class App extends Component {
   }
 }
 ```
-  

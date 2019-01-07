@@ -6,14 +6,16 @@ import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 
+import java.io.UnsupportedEncodingException;
 import java.security.Security;
 import javax.crypto.Cipher;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
+import java.math.BigInteger;
 
 import org.apache.commons.codec.binary.Base64;
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
-import org.bouncycastle.crypto.digests.MD5Digest;
+//import org.bouncycastle.crypto.digests.MD5Digest;
 
 
 public class RNCryptographyModule extends ReactContextBaseJavaModule {
@@ -39,15 +41,14 @@ public class RNCryptographyModule extends ReactContextBaseJavaModule {
   @ReactMethod
   @SuppressWarnings("unused")
   public void md5(String input, final Promise promise) {
-    MD5Digest md5 = new MD5Digest();
-    md5.update(input.getBytes(), 0, input.getBytes().length);
+      promise.resolve("TODO");
+  }
 
-    byte[] digest = new byte[md5.getDigestSize()];
-    md5.doFinal(digest, 0);
 
-    // TODO new String(Hex.encode(digest)));
-
-    promise.resolve(digest.toString());
+  @ReactMethod
+  @SuppressWarnings("unused")
+  public void sha256(String input, final Promise promise) {
+    promise.resolve("TODO");
   }
 
 
@@ -93,5 +94,10 @@ public class RNCryptographyModule extends ReactContextBaseJavaModule {
     SecretKeySpec keySpec = new SecretKeySpec(key.getBytes("US-ASCII"), "AES");
     cipher.init(Cipher.DECRYPT_MODE, keySpec, new IvParameterSpec(iv.getBytes("US-ASCII")));
     return new String(cipher.doFinal(ciphertext));
+  }
+
+
+  private String toHex(String arg) throws UnsupportedEncodingException {
+    return String.format("%040x", new BigInteger(1, arg.getBytes("US-ASCII")));
   }
 }
