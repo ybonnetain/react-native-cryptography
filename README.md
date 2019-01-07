@@ -14,9 +14,7 @@ Important notes: On iOS, this is not a library project - see installation instru
 func      | ios                  | android
 ----------|----------------------|--------------
 `AES 128` | ✓                    | ✓
-----------|----------------------|--------------
 `AES 192` | ✓                    | ✓
-----------|----------------------|--------------
 `AES 256` | ✓                    | ✓
 
 - AES 128 (pass 16 bytes key and iv)
@@ -30,7 +28,6 @@ func      | ios                  | android
 func      | ios                  | android
 ----------|----------------------|--------------
 `MD5`     | ✓                    | TODO
-----------|----------------------|--------------
 `SHA256`  | ✓                    | TODO
 
 ## Getting started
